@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box {
+  /* Background */
+  background-image: url(https://placeimg.com/640/480/nature);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  /* Position */
+  position: relative;
+  width: 600px;
+  height: 400px;
+  
+  /* Box settings */
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 0px 0px 50% 50%;
+
+}
+
+.box::before {
+  content: "";
+  display: block;
+  
+  /* Scale */
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+  
+  /* Position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  
+  /* Border */
+  border: solid 400px rgba(31, 44, 122, 0.5);
+  border-radius: 50%;
+}
+
+.box.blur::before {
+  filter: blur(20px);
+}
+
+/* Just decoration */
+body {
+    background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/arches.png');
+}
+
+.container {
+  width: 1300px;
+  margin: 30px auto;
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  
+  <div class="box">
+  </div>
+  
+  <div class="box blur">
+  </div>
+  
+</div>
+</body>
+</html>
